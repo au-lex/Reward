@@ -2,7 +2,7 @@ import { Share2 } from 'lucide-react';
 
 export default function ShareStackCard() {
   return (
-    <div className="bg-white rounded-2xl border border-gray-100 flex flex-col justify-between overflow-hidden hover:border-purple-200 transition-colors shadow-sm h-full">
+    <div className="bg-white rounded-2xl border border-gray-100 flex flex-col justify-between overflow-hidden hover:border-purple-200 transition-colors s-sm h-full">
       <div className="p-6 flex items-start gap-4">
         <div className="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center text-purple-600 shrink-0">
           <Share2 size={24} />

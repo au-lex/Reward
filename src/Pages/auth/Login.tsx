@@ -16,7 +16,7 @@ export default function LoginPage() {
 
     try {
       if (isSignUp) {
-     
+
         const { error } = await supabase.auth.signUp({
           email,
           password,
@@ -42,11 +42,11 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4 font-sans">
-      <div className="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md border border-gray-100">
-        
+      <div className="bg-white p-8 rounded-2xl s-xl w-full max-w-md border border-gray-100">
+
         {/* Header */}
         <div className="text-center mb-8">
-  
+
           <h1 className="text-2xl font-bold text-gray-900">
             {isSignUp ? 'Create Account' : 'Welcome Back'}
           </h1>
@@ -61,36 +61,36 @@ export default function LoginPage() {
             <label className="block text-sm font-medium text-gray-700 mb-1.5 ml-1">Email</label>
             <div className="relative">
               <Mail className="absolute left-3 top-3 text-gray-400" size={20} />
-              <input 
-                type="email" 
-                value={email} 
-                onChange={e => setEmail(e.target.value)} 
-                className="w-full pl-10 p-2.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none transition-all" 
+              <input
+                type="email"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+                className="w-full pl-10 p-2.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none transition-all"
                 placeholder="name@example.com"
-                required 
+                required
               />
             </div>
           </div>
-          
+
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1.5 ml-1">Password</label>
             <div className="relative">
               <Lock className="absolute left-3 top-3 text-gray-400" size={20} />
-              <input 
-                type="password" 
-                value={password} 
-                onChange={e => setPassword(e.target.value)} 
-                className="w-full pl-10 p-2.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none transition-all" 
+              <input
+                type="password"
+                value={password}
+                onChange={e => setPassword(e.target.value)}
+                className="w-full pl-10 p-2.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none transition-all"
                 placeholder="••••••••"
-                required 
+                required
                 minLength={6}
               />
             </div>
           </div>
 
-          <button 
-            disabled={loading} 
-            className="w-full bg-purple-600 text-white p-3 rounded-xl font-bold hover:bg-purple-700 transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-md hover:shadow-lg flex items-center justify-center gap-2"
+          <button
+            disabled={loading}
+            className="w-full bg-purple-600 text-white p-3 rounded-xl font-bold hover:bg-purple-700 transition-all transform hover:scale-[1.02] active:scale-[0.98] s-md hover:s-lg flex items-center justify-center gap-2"
           >
             {loading ? (
               <Loader2 className="animate-spin" size={20} />
@@ -101,12 +101,12 @@ export default function LoginPage() {
             )}
           </button>
         </form>
-        
+
         {/* Toggle Switch */}
         <div className="mt-8 text-center">
           <p className="text-sm text-gray-600">
             {isSignUp ? "Already have an account?" : "Don't have an account?"}
-            <button 
+            <button
               onClick={() => setIsSignUp(!isSignUp)}
               className="ml-2 font-bold text-purple-600 hover:text-purple-800 underline decoration-2 underline-offset-2 transition-colors"
             >
