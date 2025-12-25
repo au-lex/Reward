@@ -1,0 +1,107 @@
+import { useState } from 'react';
+import { Copy, Check, Users, Facebook, Linkedin, Twitter, MessageCircle } from 'lucide-react';
+
+interface ReferralSectionProps {
+  referralCode: string;
+  referralCount: number;
+  pointsEarned: number;
+}
+
+export default function ReferralSection({ referralCode, referralCount, pointsEarned }: ReferralSectionProps) {
+  const [copied, setCopied] = useState(false);
+  
+  const referralLink = `https://app.flowvahub.com/signup/?ref=${referralCode || 'join'}`;
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(referralLink);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <div className="w-full font-sans">
+      {/* Section Header */}
+      <div className="flex items-center gap-3 mb-6">
+        <div className="w-1.5 h-8 bg-purple-700 rounded-full"></div>
+        <h2 className="text-2xl font-bold text-gray-900">Refer & Earn</h2>
+      </div>
+
+      {/* Main Card */}
+      <div className="bg-slate-50/50 rounded-[24px] p-8 border border-gray-100 shadow-sm">
+        
+        {/* Top Content: Info & Stats */}
+        <div className="mb-10">
+          <div className="flex items-start gap-4 mb-10">
+            <div className="p-2.5 bg-purple-100/50 rounded-xl text-purple-600">
+              <Users size={24} />
+            </div>
+            <div>
+              <h3 className="font-bold text-gray-900 text-lg mb-0.5">Share Your Link</h3>
+              <p className="text-gray-500 text-sm font-medium">
+                Invite friends and earn 25 points when they join!
+              </p>
+            </div>
+          </div>
+
+          {/* Stats Row */}
+          <div className="flex justify-around items-center px-4">
+            <div className="flex flex-col items-center">
+              <span className="text-3xl font-bold text-purple-600 mb-1">{referralCount}</span>
+              <span className="text-sm text-gray-600 font-medium">Referrals</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <span className="text-3xl font-bold text-purple-600 mb-1">{pointsEarned}</span>
+              <span className="text-sm text-gray-600 font-medium">Points Earned</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Link Section (Purple Background Block) */}
+        <div className="bg-purple-50/60 rounded-xl p-6 mb-8 border border-purple-100/50">
+          <label className="text-sm text-gray-600 font-medium mb-3 block">
+            Your personal referral link:
+          </label>
+          <div className="relative flex items-center">
+            <input 
+              type="text" 
+              readOnly 
+              value={referralLink} 
+              className="w-full bg-white border border-gray-200 text-gray-600 text-sm rounded-xl py-3.5 px-4 pr-12 focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-100 transition-all shadow-sm"
+            />
+            <button 
+              onClick={handleCopy}
+              className="absolute right-2 p-2 hover:bg-gray-50 rounded-lg transition-colors text-purple-600"
+              title="Copy to clipboard"
+            >
+              {copied ? <Check size={20} /> : <Copy size={20} />}
+            </button>
+          </div>
+        </div>
+
+        {/* Social Share Buttons */}
+        <div className="flex justify-center gap-5">
+          {/* Facebook */}
+          <button className="w-10 h-10 bg-[#1877F2] text-white rounded-full flex items-center justify-center hover:opacity-90 transition-transform hover:-translate-y-1 shadow-sm">
+            <Facebook size={20} fill="white" />
+          </button>
+          
+          {/* X (Twitter) */}
+          <button className="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center hover:opacity-90 transition-transform hover:-translate-y-1 shadow-sm">
+            <Twitter size={20} fill="white" className="ml-0.5" />
+          </button>
+          
+          {/* LinkedIn */}
+          <button className="w-10 h-10 bg-[#0A66C2] text-white rounded-full flex items-center justify-center hover:opacity-90 transition-transform hover:-translate-y-1 shadow-sm">
+            <Linkedin size={20} fill="white" />
+          </button>
+          
+          {/* WhatsApp */}
+          <button className="w-10 h-10 bg-[#25D366] text-white rounded-full flex items-center justify-center hover:opacity-90 transition-transform hover:-translate-y-1 shadow-sm">
+            <MessageCircle size={20} fill="white" />
+          </button>
+        </div>
+
+      </div>
+    </div>
+  );
+}

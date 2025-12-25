@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+
+@theme {
+
+  --color-pri: #000000;   
+  --color-sec: rgb(102, 102, 102);  
+  --color-accent: #ec4899;    
+  --color-bg: #fff; 
+  --color-text: #111827;      
+  --color-border: #e5e7eb;   
+  --color-success: #10b981;  
+  --color-warning: #f59e0b;    
+  --color-error: #ef4444;     
+  --color-info: #3b82f6;      
+  --color-muted: #6b7280;      
+  --color-overlay: rgba(0, 0, 0, 0.5); 
+
+
+    /* 🔤 Fonts */
+    --font-sans: "Roboto", sans-serif;
+
+    
+
+}
+
+
+
+  .glass-morphism {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+
+@layer base {
+
+  h1, h2, h3, h4, h5, h6, span, div {
+    @apply font-sans text-gray-800;
+  }
+  
+  p {
+    @apply text-gray-700 leading-relaxed font-sans;
+  }
+  
+  a {
+    @apply  font-sans;
+  }
+}
+
+
+.animation-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
