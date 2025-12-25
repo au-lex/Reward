@@ -9,7 +9,7 @@ interface ReferralSectionProps {
 
 export default function ReferralSection({ referralCode, referralCount, pointsEarned }: ReferralSectionProps) {
   const [copied, setCopied] = useState(false);
-  
+
   const referralLink = `https://app.flowvahub.com/signup/?ref=${referralCode || 'join'}`;
 
   const handleCopy = () => {
@@ -27,8 +27,8 @@ export default function ReferralSection({ referralCode, referralCount, pointsEar
       </div>
 
       {/* Main Card */}
-      <div className="bg-slate-50/50 rounded-[24px] p-8 border border-gray-100 shadow-sm">
-        
+      <div className="bg-slate-50/50 rounded-[24px] p-8 border border-gray-100 s-sm">
+
         {/* Top Content: Info & Stats */}
         <div className="mb-10">
           <div className="flex items-start gap-4 mb-10">
@@ -62,13 +62,13 @@ export default function ReferralSection({ referralCode, referralCount, pointsEar
             Your personal referral link:
           </label>
           <div className="relative flex items-center">
-            <input 
-              type="text" 
-              readOnly 
-              value={referralLink} 
-              className="w-full bg-white border border-gray-200 text-gray-600 text-sm rounded-xl py-3.5 px-4 pr-12 focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-100 transition-all shadow-sm"
+            <input
+              type="text"
+              readOnly
+              value={referralLink}
+              className="w-full bg-white border border-gray-200 text-gray-600 text-sm rounded-xl py-3.5 px-4 pr-12 focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-100 transition-all s-sm"
             />
-            <button 
+            <button
               onClick={handleCopy}
               className="absolute right-2 p-2 hover:bg-gray-50 rounded-lg transition-colors text-purple-600"
               title="Copy to clipboard"
@@ -81,22 +81,22 @@ export default function ReferralSection({ referralCode, referralCount, pointsEar
         {/* Social Share Buttons */}
         <div className="flex justify-center gap-5">
           {/* Facebook */}
-          <button className="w-10 h-10 bg-[#1877F2] text-white rounded-full flex items-center justify-center hover:opacity-90 transition-transform hover:-translate-y-1 shadow-sm">
+          <button className="w-10 h-10 bg-[#1877F2] text-white rounded-full flex items-center justify-center hover:opacity-90 transition-transform hover:-translate-y-1 s-sm">
             <Facebook size={20} fill="white" />
           </button>
-          
+
           {/* X (Twitter) */}
-          <button className="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center hover:opacity-90 transition-transform hover:-translate-y-1 shadow-sm">
+          <button className="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center hover:opacity-90 transition-transform hover:-translate-y-1 s-sm">
             <Twitter size={20} fill="white" className="ml-0.5" />
           </button>
-          
+
           {/* LinkedIn */}
-          <button className="w-10 h-10 bg-[#0A66C2] text-white rounded-full flex items-center justify-center hover:opacity-90 transition-transform hover:-translate-y-1 shadow-sm">
+          <button className="w-10 h-10 bg-[#0A66C2] text-white rounded-full flex items-center justify-center hover:opacity-90 transition-transform hover:-translate-y-1 s-sm">
             <Linkedin size={20} fill="white" />
           </button>
-          
+
           {/* WhatsApp */}
-          <button className="w-10 h-10 bg-[#25D366] text-white rounded-full flex items-center justify-center hover:opacity-90 transition-transform hover:-translate-y-1 shadow-sm">
+          <button className="w-10 h-10 bg-[#25D366] text-white rounded-full flex items-center justify-center hover:opacity-90 transition-transform hover:-translate-y-1 s-sm">
             <MessageCircle size={20} fill="white" />
           </button>
         </div>
