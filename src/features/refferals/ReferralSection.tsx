@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Copy, Check, Users, Facebook, Linkedin, Twitter, MessageCircle } from 'lucide-react';
-
+import { Copy, Check, Users, } from 'lucide-react';
+import { FaFacebookF, FaLinkedinIn, FaWhatsapp, FaXTwitter } from 'react-icons/fa6';
 interface ReferralSectionProps {
   referralCode: string;
   referralCount: number;
@@ -19,20 +19,16 @@ export default function ReferralSection({ referralCode, referralCount, pointsEar
   };
 
   return (
-    <div className="w-full font-sans">
-      {/* Section Header */}
-      <div className="flex items-center gap-3 mb-6">
-        <div className="w-1.5 h-8 bg-purple-700 rounded-full"></div>
-        <h2 className="text-2xl font-bold text-gray-900">Refer & Earn</h2>
-      </div>
+    <main className="w-full ">
+  
 
       {/* Main Card */}
-      <div className="bg-slate-50/50 rounded-[24px] p-8 border border-gray-100 s-sm">
+      <section className=" rounded-xl overflow-hidden  border border-gray-100 s-sm">
 
         {/* Top Content: Info & Stats */}
-        <div className="mb-10">
-          <div className="flex items-start gap-4 mb-10">
-            <div className="p-2.5 bg-purple-100/50 rounded-xl text-purple-600">
+        <section className="mb-10 ">
+          <div className="flex items-center gap-4 mb-10 bg-[#EEF2FF] p-4">
+            <div className=" text-purple-600">
               <Users size={24} />
             </div>
             <div>
@@ -54,7 +50,11 @@ export default function ReferralSection({ referralCode, referralCount, pointsEar
               <span className="text-sm text-gray-600 font-medium">Points Earned</span>
             </div>
           </div>
-        </div>
+        </section>
+
+        <section className="px-4">
+
+  
 
         {/* Link Section (Purple Background Block) */}
         <div className="bg-purple-50/60 rounded-xl p-6 mb-8 border border-purple-100/50">
@@ -78,30 +78,32 @@ export default function ReferralSection({ referralCode, referralCount, pointsEar
           </div>
         </div>
 
+        </section>
+
         {/* Social Share Buttons */}
         <div className="flex justify-center gap-5">
           {/* Facebook */}
           <button className="w-10 h-10 bg-[#1877F2] text-white rounded-full flex items-center justify-center hover:opacity-90 transition-transform hover:-translate-y-1 s-sm">
-            <Facebook size={20} fill="white" />
+          <FaFacebookF size={20}  />
           </button>
 
           {/* X (Twitter) */}
           <button className="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center hover:opacity-90 transition-transform hover:-translate-y-1 s-sm">
-            <Twitter size={20} fill="white" className="ml-0.5" />
+            <FaXTwitter size={20} fill="white" className="ml-0.5" />
           </button>
 
           {/* LinkedIn */}
           <button className="w-10 h-10 bg-[#0A66C2] text-white rounded-full flex items-center justify-center hover:opacity-90 transition-transform hover:-translate-y-1 s-sm">
-            <Linkedin size={20} fill="white" />
+          <FaLinkedinIn size={20} fill="white" />
           </button>
 
           {/* WhatsApp */}
           <button className="w-10 h-10 bg-[#25D366] text-white rounded-full flex items-center justify-center hover:opacity-90 transition-transform hover:-translate-y-1 s-sm">
-            <MessageCircle size={20} fill="white" />
+          <FaWhatsapp size={24} fill="white" />
           </button>
         </div>
 
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }
