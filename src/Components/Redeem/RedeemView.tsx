@@ -66,10 +66,13 @@ export default function RedeemView({ userBalance }: RedeemViewProps) {
   ];
 
   return (
-    <div>
+    <div className='w-full max-w-full space-y-6'>
       <h2 className="text-xl font-bold text-gray-900 mb-4 border-l-4 border-purple-600 pl-3">Redeem Your Points</h2>
 
+
+
       <Tabs items={tabItems} activeId={filter} onChange={setFilter} />
+      
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 

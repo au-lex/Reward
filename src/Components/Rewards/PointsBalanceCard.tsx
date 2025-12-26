@@ -9,7 +9,7 @@ export default function PointsBalanceCard({ balance = 5 }: PointsBalanceCardProp
   const progressPercentage = Math.min((balance / GOAL) * 100, 100);
 
   return (
-    <div className="bg-card rounded-[20px] shadow-lg border border-gray-100 w-full max-w-sm overflow-hidden font-sans">
+    <div className="bg-card rounded-[20px] shadow-md w-full max-w-sm overflow-hidden font-sans">
       {/* Header Section */}
       <div className="bg-indigo-50/60 p-5 flex items-center gap-2.5">
         <Award size={22} className="text-purple-600 fill-purple-600" />
