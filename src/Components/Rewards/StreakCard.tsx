@@ -45,7 +45,7 @@ export default function StreakCard({ streak = 0, lastCheckIn, onClaimSuccess }: 
   const weekDays = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
 
   return (
-    <div className="bg-card rounded-[20px] shadow-lg border h-full border-gray-100 w-full max-w-sm overflow-hidden font-sans">
+    <div className="bg-card rounded-[20px] shadow-md  h-full border-gray-100 w-full max-w-sm overflow-hidden font-sans">
       {/* Header Section */}
       <div className="bg-blue-50/60 p-5 flex items-center gap-2.5">
         <Calendar size={22} className="text-blue-500" />

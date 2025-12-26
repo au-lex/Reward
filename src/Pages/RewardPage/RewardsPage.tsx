@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Loader2 } from 'lucide-react';
+
 import { supabase } from '../../lib/supabase';
 import { type UserProfile } from '../../types';
 
-// Layout
+
 import DashboardLayout from '../../layout/DashboardLayout';
 
-// Features
+
 import StreakCard from '../../Components/Rewards/StreakCard';
-// import RedeemView from '../../Components/RedeemView';
+
 import ReferralSection from '../../Components/refferals/ReferralSection';
 import RewardsHeader from '../../Components/Rewards/RewardsHeader';
 import PointsBalanceCard from '../../Components/Rewards/PointsBalanceCard';
@@ -17,6 +17,7 @@ import FeaturedToolCard from '../../Components/Rewards/FeaturedToolCard';
 import ReferralPromoCard from '../../Components/Rewards/ReferralPromoCard';
 import ShareStackCard from '../../Components/Rewards/ShareStackCard';
 import RedeemView from '../../Components/Redeem/RedeemView';
+import RewardSkeleton from '../../Components/Loader/Loader';
 
 
 
@@ -49,15 +50,20 @@ export default function RewardsPage() {
 
   if (loading) {
     return (
-      <div className="h-screen flex items-center justify-center bg-gray-50">
-        <Loader2 className="animate-spin text-purple-600 w-8 h-8" />
-      </div>
+      <DashboardLayout>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {Array.from({ length: 6 }).map((_, i) => (
+            <RewardSkeleton key={i} />
+          ))}
+        </div>
+      </DashboardLayout>
     );
   }
 
+   
   return (
     <DashboardLayout>
-      <section className="font-sans max-w-7xl mx-auto">
+      <section className="font-sans max-w-7xl mx-auto ">
 
         {/* Header Section */}
         <RewardsHeader activeTab={activeTab} setActiveTab={setActiveTab} />
@@ -72,7 +78,7 @@ export default function RewardsPage() {
                 <h2 className="text-2xl font-bold text-gray-900">Your Rewards Journey</h2>
               </div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-3">
                 {/* 1. Points */}
                 <PointsBalanceCard balance={profile?.points_balance || 0} />
 
