@@ -96,7 +96,6 @@ export default function RewardsPage() {
               </div>
             </div>
 
-            {/* Bottom Section: Earn More */}
             <div className="pb-10">
               <div className="flex items-center gap-2 mb-6 border-l-4 border-purple-600 pl-3">
                 <h2 className="text-2xl font-bold text-gray-900">Earn More Points</h2>
@@ -107,6 +106,12 @@ export default function RewardsPage() {
                 <ShareStackCard />
               </div>
             </div>
+
+
+            <div className="flex items-center gap-2 mb-6 border-l-4 border-purple-600 pl-3">
+                <h2 className="text-2xl font-bold text-gray-900">Refer & Earn
+                </h2>
+              </div>
 
             <div className="mt-8">
               <ReferralSection

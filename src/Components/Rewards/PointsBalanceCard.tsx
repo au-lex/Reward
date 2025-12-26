@@ -1,4 +1,4 @@
-import { Award, Rocket, Star } from 'lucide-react';
+import { Award, Star } from 'lucide-react';
 
 interface PointsBalanceCardProps {
   balance?: number;
@@ -47,7 +47,7 @@ export default function PointsBalanceCard({ balance = 5 }: PointsBalanceCardProp
 
           {/* Footer Message */}
           <div className="flex items-center gap-2 text-sm text-gray-500 pt-1">
-            <Rocket size={16} className="text-gray-400 fill-gray-400" />
+          🚀 
             <span>Just getting started — keep earning points!</span>
           </div>
         </div>

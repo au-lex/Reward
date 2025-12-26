@@ -47,11 +47,11 @@ export default function FeaturedToolCard() {
 
         {/* Action Buttons */}
         <div className="flex items-center gap-3 justify-between ">
-          <Link to="/signup" className=" min-w-[120px] bg-purple-600 hover:bg-purple-700 text-white py-2.5 rounded-full text-[14px] font-bold transition-all flex items-center justify-center gap-1.5 ">
+          <Link to="https://go.reclaim.ai/ur9i6g5eznps" target='_blank' className=" min-w-[120px] bg-purple-600 hover:bg-purple-700 text-white py-2.5 rounded-full text-[14px] font-bold transition-all flex items-center justify-center gap-1.5 ">
             <UserPlus size={16} /> Sign up
           </Link>
 
-          <Link to="/signup" className="bg-gradient-to-r min-w-[120px] from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white py-2.5 rounded-full text-xs font-bold transition-all flex items-center justify-center gap-1.5 s-md s-pink-200">
+          <Link to="https://go.reclaim.ai/ur9i6g5eznps" target='_blank'  className="bg-gradient-to-r min-w-[120px] from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white py-2.5 rounded-full text-xs font-bold transition-all flex items-center justify-center gap-1.5 s-md s-pink-200">
             <Gift size={16} /> Claim 50 pts
           </Link>
         </div>
