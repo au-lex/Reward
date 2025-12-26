@@ -9,13 +9,14 @@ import DashboardLayout from '../../layout/DashboardLayout';
 
 // Features
 import StreakCard from '../../Components/Rewards/StreakCard';
-import RedeemView from '../../features/rewards/RedeemView';
-import ReferralSection from '../../features/refferals/ReferralSection';
+// import RedeemView from '../../Components/RedeemView';
+import ReferralSection from '../../Components/refferals/ReferralSection';
 import RewardsHeader from '../../Components/Rewards/RewardsHeader';
 import PointsBalanceCard from '../../Components/Rewards/PointsBalanceCard';
 import FeaturedToolCard from '../../Components/Rewards/FeaturedToolCard';
 import ReferralPromoCard from '../../Components/Rewards/ReferralPromoCard';
 import ShareStackCard from '../../Components/Rewards/ShareStackCard';
+import RedeemView from '../../Components/Redeem/RedeemView';
 
 
 
@@ -65,7 +66,7 @@ export default function RewardsPage() {
         {activeTab === 'earn' ? (
           <section className="space-y-8 animate-in slide-in-from-left-4 duration-300">
 
-        
+
             <div>
               <div className="flex items-center gap-2 mb-6 border-l-4 border-purple-600 pl-3">
                 <h2 className="text-2xl font-bold text-gray-900">Your Rewards Journey</h2>
@@ -102,12 +103,12 @@ export default function RewardsPage() {
             </div>
 
             <div className="mt-8">
-          <ReferralSection
-            referralCode={profile?.referral_code || ''}
-            referralCount={profile?.referral_count || 0}
-            pointsEarned={profile?.referral_earnings || 0}
-          />
-        </div>
+              <ReferralSection
+                referralCode={profile?.referral_code || ''}
+                referralCount={profile?.referral_count || 0}
+                pointsEarned={profile?.referral_earnings || 0}
+              />
+            </div>
 
           </section>
         ) : (
@@ -118,7 +119,7 @@ export default function RewardsPage() {
         )}
 
 
-  
+
 
       </section>
     </DashboardLayout>
