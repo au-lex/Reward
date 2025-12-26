@@ -9,7 +9,7 @@
   --color-bg: #fff; 
   --color-text: #111827;      
   --color-border: #e5e7eb;   
-  --color-success: #10b981;  
+  --color-card: #F9FAFB;  
   --color-warning: #f59e0b;    
   --color-error: #ef4444;     
   --color-info: #3b82f6;      
@@ -41,7 +41,7 @@
   }
   
   p {
-    @apply text-gray-700 leading-relaxed font-sans;
+    @apply text-gray-700 font-sans;
   }
   
   a {

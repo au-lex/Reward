@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Calendar, Check, Zap } from 'lucide-react';
-import { supabase } from '../lib/supabase';
+import { supabase } from '../../lib/supabase';
 
 interface Props {
   streak?: number;
@@ -40,13 +40,12 @@ export default function StreakCard({ streak = 0, lastCheckIn, onClaimSuccess }: 
 
   const claimed = isClaimedToday();
 
-  // Calculate current day index for the UI (0 = Monday, 6 = Sunday)
-  // JS getDay(): 0 = Sun, 1 = Mon... 
+
   const currentDayIndex = (new Date().getDay() + 6) % 7;
   const weekDays = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
 
   return (
-    <div className="bg-white rounded-[20px] s-sm border border-gray-100 w-full max-w-sm overflow-hidden font-sans">
+    <div className="bg-card rounded-[20px] shadow-lg border h-full border-gray-100 w-full max-w-sm overflow-hidden font-sans">
       {/* Header Section */}
       <div className="bg-blue-50/60 p-5 flex items-center gap-2.5">
         <Calendar size={22} className="text-blue-500" />
@@ -57,22 +56,22 @@ export default function StreakCard({ streak = 0, lastCheckIn, onClaimSuccess }: 
       <div className="p-6">
         {/* Streak Count */}
         <div className="mb-6">
-          <span className="text-5xl font-bold text-purple-600 tracking-tight">{streak}</span>
+          <span className="text-4xl font-bold text-purple-600 tracking-tight">{streak}</span>
           <span className="text-4xl font-bold text-purple-600 ml-2">day</span>
         </div>
 
         {/* Days of Week Row */}
-        <div className="flex justify-between items-center mb-4 px-1">
+        <div className="flex justify-between items-center  px-1  ">
           {weekDays.map((day, i) => {
             const isToday = i === currentDayIndex;
-            // You can add logic here to highlight past claimed days if you have that data
+     
             return (
               <div
                 key={i}
                 className={`
                             w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold transition-all
                             ${isToday
-                    ? 'bg-gray-100 text-gray-700 border-2 border-purple-500 ring-2 ring-purple-100 ring-offset-1'
+                    ? 'bg-gray-100 text-gray-700 border-4 p-5 border-purple-500 ring-2 ring-purple-100 ring-offset-1'
                     : 'bg-gray-200/70 text-gray-500'
                   }
                         `}
@@ -84,7 +83,7 @@ export default function StreakCard({ streak = 0, lastCheckIn, onClaimSuccess }: 
         </div>
 
         {/* Helper Text */}
-        <p className="text-center text-gray-600 text-sm font-medium mb-6">
+        <p className="text-center text-gray-600 text-sm  my-4 ">
           Check in daily to earn +5 points
         </p>
 
